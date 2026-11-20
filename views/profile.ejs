@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+
+   
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #121820;
+        color: #e5e7eb;
+        padding: 30px;
+        margin: 0;
+    }
+
+    .container {
+        background: #1e293b;
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #334155;
+        border-radius: 10px;
+    }
+
+    h1 {
+        color: #ffffff;
+        margin-top: 0;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        color: #60a5fa;
+        margin: 20px 0;
+    }
+
+    .detail {
+        background: #263449;
+        border: 1px solid #3b4b63;
+        color: #e2e8f0;
+        padding: 15px;
+        margin: 12px 0;
+        border-radius: 6px;
+    }
+
+    a {
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 11px 18px;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 15px;
+    }
+
+    a:hover {
+        background: #1d4ed8;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Profile</h1>
+
+    <h2><%= student.name %></h2>
+
+    <div class="detail">
+        Roll Number: <%= student.rollNo %>
+    </div>
+
+    <div class="detail">
+        Class: <%= student.className %>
+    </div>
+
+    <div class="detail">
+        Age: <%= student.age %>
+    </div>
+
+    <div class="detail">
+        Gender: <%= student.gender %>
+    </div>
+
+    <div class="detail">
+        Phone: <%= student.phone || 'Not provided' %>
+    </div>
+
+    <div class="detail">
+        Address: <%= student.address || 'Not provided' %>
+    </div>
+
+    <br>
+
+    <a href="/students">Back to Students</a>
+
+</div>
+
+</body>
+</html>

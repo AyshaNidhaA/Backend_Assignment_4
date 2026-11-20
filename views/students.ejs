@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Students</title>
+
+  
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #121820;
+        color: #e5e7eb;
+        padding: 30px;
+        margin: 0;
+    }
+
+    .container {
+        background: #1e293b;
+        padding: 30px;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h1 {
+        color: #ffffff;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        color: #cbd5e1;
+    }
+
+    .student {
+        background: #263449;
+        border: 1px solid #3b4b63;
+        padding: 18px;
+        margin: 14px 0;
+        border-radius: 8px;
+    }
+
+    .student h3 {
+        color: #ffffff;
+        margin-top: 0;
+    }
+
+    .student p {
+        color: #cbd5e1;
+        margin: 10px 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #60a5fa;
+    }
+
+    a:hover {
+        color: #93c5fd;
+    }
+
+    .button {
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 11px 18px;
+        border-radius: 6px;
+        margin: 5px;
+    }
+
+    .button:hover {
+        background: #1d4ed8;
+        color: white;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+   <h1>
+    <% if (className) { %>
+        Class <%= className %> Students
+    <% } else { %>
+        All Students
+    <% } %>
+</h1>
+
+    <a class="button" href="/">Dashboard</a>
+    <a class="button" href="/students/add">Add Student</a>
+
+    <h3>Total: <%= students.length %></h3>
+
+    <% if (students.length > 0) { %>
+
+        <% students.forEach((s) => { %>
+
+            <div class="student">
+
+                <h3><%= s.name %></h3>
+
+                <p>Roll Number: <%= s.rollNo %></p>
+
+                <p>Class: <%= s.className %></p>
+
+                <a href="/students/profile/<%= s.id %>">
+    View Profile
+</a>
+
+            </div>
+
+        <% }) %>
+
+    <% } else { %>
+
+        <p>No students found.</p>
+
+    <% } %>
+
+</div>
+
+</body>
+</html>
